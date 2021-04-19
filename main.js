@@ -11,9 +11,6 @@ let move = ['rock', 'paper', 'scissors'];
 
 let p2 = move[Math.floor(Math.random() * 3)];
 let p1 = move[Math.floor(Math.random() * 3)];
-console.log(p1);
-console.log(p2);
-
 
 console.log(`player 1: ${p1}`)
 console.log(`player 2: ${p2}`)
