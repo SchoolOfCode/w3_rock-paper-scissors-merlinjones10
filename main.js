@@ -9,8 +9,8 @@ let move = ['rock', 'paper', 'scissors'];
 //  > = beats 
 //  2 > 1 > 0 > 2
 
-let p2 = move[Math.floor(Math.random() * 3)];
-let p1 = move[Math.floor(Math.random() * 3)];
+let p2 = move[random()];
+let p1 = move[random()];
 
 console.log(`player 1: ${p1}`)
 console.log(`player 2: ${p2}`)
@@ -48,3 +48,9 @@ else if (p1 === move[2]){
        console.log('two is winner')
    }
 }
+
+
+//next steps, make random function
+//encase moves in function
+//counter for game
+//
