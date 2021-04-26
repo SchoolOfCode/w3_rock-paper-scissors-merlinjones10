@@ -74,19 +74,4 @@ p1 = input();
 let result = getWinner(p1, p2);
 displayMoves();
 console.log(result);
-// let myButton = document.getElementById("my-button");
-// let i = 0;
-
-// function testFunction(){
-//     console.log("button is working");
-//     let newPara = document.createElement('p');
-//     newPara.innerHTML = "here we go" + i;
-//     document.body.appendChild(newPara);
-//     i++;
-
-// }
-// myButton.addEventListener('click', testFunction)
-//next steps, make random function
-//encase moves in function
-//counter for game
-//
+alert(result);
