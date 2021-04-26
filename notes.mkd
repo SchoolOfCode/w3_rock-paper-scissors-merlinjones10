@@ -4,7 +4,7 @@
 
 1. Ask player for move
 2. get random move from computer for player 2
-3. if TIE repeat
+3. if TIE repeat 
 4. else 
 5. if player move beats comp 
     a) player1 points +1
