@@ -13,3 +13,10 @@
     a) player1 points -1
     b) player2 points +1
 7. 
+
+
+//
+Interactive plan.
+3 buttons that run the getWinner function
+display text with winner or loser <p></p>
+Update scores

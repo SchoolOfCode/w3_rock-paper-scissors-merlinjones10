@@ -1,77 +1,94 @@
+// HTML DOM variables
 
+message = document.getElementById('message-to-player');
+p1Score = document.getElementById('player-one-tally');
+p2Score = document.getElementById('player-two-tally');
+drawCounterText = document.getElementById('draw-count');
+gamesPlayedText = document.getElementById('games-played-text');
+resetButton = document.getElementById("reset-button");
+inputBox = document.getElementById('input-box');
 //points counter 
-p1Total = 0;
-p2Total = 0;
-
+let p1Total = 0;
+let p2Total = 0;
+let drawCount = 0;
+let gamesPlayed = 0;
 
 let move = ['rock', 'paper', 'scissors'];
 // 0 rock, 1 paper, 2 scissors
-//  > -> beats 
-//  2 > 1 > 0 > 2
-
+//  > -> beats so...  2 > 1 > 0 > 2
 
 //random function
 function random(){
     return Math.floor(Math.random() * 3);
 }
-// display moves 
-function displayMoves() {
-    console.log(p1);
-    console.log(p2);
-    
-}
-// function to check correct input
-function input(){
-    playerInput = prompt('rock, paper, scissors').toLowerCase();
-    // console.log(move.includes(p1));
-    if (move.includes(playerInput)){
-        return playerInput;
-    } else {
-        alert('please enter rock, paper or scissors');
-    }
-}
 
+//
+
+//
+//
 let p1 = undefined;
-let p2 = move[random()];
-
 
 //consider refactoring?
-
-function getWinner (p1, p2){
+function getWinner (p1){
+    let p2 = move[random()];
+    gamesPlayed++
+    gamesPlayedText.innerHTML = `Games played: ${gamesPlayed}`
     if (p1 === p2){
-        // console.log('tie!')
+        message.innerHTML = `Computer chooses ${p2}, DRAW`
+        drawCount++;
+        drawCounterText.innerHTML = `Draw count: ${drawCount}`
         return '0'
     } else if (p1 === move[0]){
          if(p2 === move[2]){
-            // console.log('one is winner')
+            message.innerHTML = `Computer chooses ${p2}, You win`;
+            p1Total++;
+            p1Score.innerHTML = `Player 1 score: ${p1Total}`;
             return "+1"
+
         } else if (p2 === move[1]){
-            // console.log('two is winner')
+            message.innerHTML = `Computer chooses ${p2}, You Lose`;
+            p2Total++;
+            p2Score.innerHTML = `Player 2 score: ${p2Total}`;
             return "-1"
         }
     }else if (p1 === move[1]){
         if(p2 === move[0]){
-        //    console.log('one is winner')
-           return "+1"
+            message.innerHTML = `Computer chooses ${p2}, You win`;
+            p1Total++;
+            p1Score.innerHTML = `Player 1 score: ${p1Total}`;
+            
+            return "+1"
        } else if (p2 === move[2]){
-        //    console.log('two is winner')
-           return "-1"
+            message.innerHTML = `Computer chooses ${p2}, You win`;
+            p2Total++;
+            p2Score.innerHTML = `Player 2 score: ${p2Total}`;
+            return "-1"
        }
     } else if (p1 === move[2]){
         if(p2 === move[1]){
-        //    console.log('one is winner')
-           return "+1"
+            message.innerHTML = `Computer chooses ${p2}, You win`;
+            p1Total++;
+            p1Score.innerHTML = `Player 1 score: ${p1Total}`;
+            return "+1"
        } else if (p2 === move[0]){
-        //    console.log('two is winner')
-           return "-1"
+        message.innerHTML = `Computer chooses ${p2}, You Lose`;
+        p2Total++;
+        p2Score.innerHTML = `Player 2 score: ${p2Total}`;
+        return "-1"
        }
     }
 }
 
 
+function reset() {
+    p1Total = 0;
+    p2Total = 0;
+    drawCount = 0;
+    gamesPlayed = 0;
+    p1Score.innerHTML = `Player 1 score: ${0}`;
+    p2Score.innerHTML = `Player 2 score: ${0}`;
+    gamesPlayedText.innerHTML = `Games played: ${0}`;
+    drawCounterText.innerHTML = `Draw count: ${0}`;   
+}
 
-p1 = input();
-let result = getWinner(p1, p2);
-displayMoves();
-console.log(result);
-alert(result);
+resetButton.addEventListener("click", reset);
