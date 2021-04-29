@@ -5,5 +5,37 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Rock, Paper, Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <h1>ROCK, PAPER, SCISSORS</h1>
+    <p>Let's play! </p>
+    <!-- <input type="text" placeholder="Please enter a name" id="input-box"> -->
+    <br>
+    <section class="buttons-section">
+      <button class="button" onclick="getWinner('rock')">Rock</button>
+      <button class="button" onclick="getWinner('paper')">Paper</button>
+      <button class="button" onclick="getWinner('scissors')">Scissors</button>
+    </section>
+    
+    <p id="message-to-player">Choose Wiseley...</p>
+    
+    <section>
+      <div id="player-one-tally" class="box">
+        <p>Player 1 score:</p>
+      </div>
+      <div id="player-two-tally" class="box">
+          <p>Player 2 score:</p>
+      </div>
+      <div id="draw-count">
+        Draw count:
+      </div>
+      <div id="games-played-text">
+        Games Played:
+      </div>
+    </section>
+<button id="reset-button">Reset</button>
+
+
+
+    <script src="main.js"></script>
+  </body>
 </html>

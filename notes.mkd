@@ -1,0 +1,22 @@
+# Possible combinations = 9
+6 after ties
+# Possible round outcomes tie, lose, win
+
+1. Ask player for move
+2. get random move from computer for player 2
+3. if TIE repeat 
+4. else 
+5. if player move beats comp 
+    a) player1 points +1
+    b) player2 points -1
+6.  else if player2 move beats player1 
+    a) player1 points -1
+    b) player2 points +1
+7. 
+
+
+//
+Interactive plan.
+3 buttons that run the getWinner function
+display text with winner or loser <p></p>
+Update scores
